@@ -1,0 +1,17 @@
+{
+  "name": "request-for-maintenance",
+  "version": "1.0.0",
+  "description": "MERN Coding Bootcamp Project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Aizad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
