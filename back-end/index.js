@@ -1,6 +1,7 @@
 //import all the required modules
 import express from "express";
 import healthController from "./controller/health.js";
+import { testConnection } from "./database/connection.js";
 
 
 
@@ -13,6 +14,9 @@ const PORT = 8686;
 //parsing
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+//database connection test
+testConnection();
 
 //database init
 

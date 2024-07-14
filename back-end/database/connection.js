@@ -22,10 +22,15 @@ export async function testConnection() {
     try {
         const dbRes = await pool.query("SELECT NOW()");
         const dbName = await pool.query("SELECT current_database()");
+        const time = dbRes.rows[0].now;
+        const name = dbName.rows[0].current_database;
+        
+        console.log(`Database connected at ${time} on ${name}`);
+        //const dbName = await pool.query("SELECT current_database()");
 
-        const time = dbRes.rows[] 
+        //const time = dbRes.rows[] 
 
-        const time = dbRes.rows
+        //const time = dbRes.rows
 
     } catch (error) {
         console.error("Database connection failed");
