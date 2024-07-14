@@ -1,4 +1,6 @@
 import pkg from "pg";
+import createUsersTable from "../model/user.js";
+import createRequestTable from "../model/request.js";
 
 
 
@@ -24,13 +26,10 @@ export async function testConnection() {
         const dbName = await pool.query("SELECT current_database()");
         const time = dbRes.rows[0].now;
         const name = dbName.rows[0].current_database;
-        
         console.log(`Database connected at ${time} on ${name}`);
-        //const dbName = await pool.query("SELECT current_database()");
-
-        //const time = dbRes.rows[] 
-
-        //const time = dbRes.rows
+        //create users table
+        await createUsersTable();
+        await createRequestTable();
 
     } catch (error) {
         console.error("Database connection failed");
