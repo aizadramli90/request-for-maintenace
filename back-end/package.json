@@ -1,5 +1,5 @@
 {
-  "name": "request-for-maintenance",
+  "name": "request-for-maintenance-and-safety-system",
   "version": "1.0.0",
   "description": "MERN Coding Bootcamp Project",
   "main": "index.js",
@@ -12,6 +12,7 @@
   "author": "Muhammad Aizad",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
   }
 }

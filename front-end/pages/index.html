@@ -3,13 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="../public/style.css" />
     <title>Request For Maintenance and Safety System: Login Page</title>
+    <style>
+      .carousel-item {
+        height: 400px; /* Set a fixed height for the carousel items */
+        width: 800px;
+      }
+
+      .carousel-item img {
+        height: 100%;
+
+        width: 100%;
+
+        object-fit: cover; /* Ensure images cover the container without stretching */
+      }
+    </style>
   </head>
   <body>
     <nav>
-      <div class="logo-container">
+      <div class="custom-logo-container">
         <img
           src="../public/eco-svgrepo-com.svg"
           alt=""
@@ -18,55 +38,183 @@
         />
         <a href="#">EcoGuardian</a>
       </div>
-      <ul class="nav-link">
-        <li><a class="link" href="http://">Home</a></li>
-        <li><a class="link" href="http://">Request</a></li>
-        <li><a class="link" href="http://">Job Status</a></li>
-        <li><a class="link" href="http://">Contact Us</a></li>
+      <ul>
+        <li><a class="custom-nav-link" href="#">Home</a></li>
+        <li><a class="custom-nav-link" href="#">Job Status</a></li>
+        <li><a class="custom-nav-link" href="#">Contact Us</a></li>
+        <li><a class="custom-nav-link" href="#">Request</a></li>
       </ul>
     </nav>
-    <main class="main-section">
-      <div class="title">
-        <h1 class="title-text">
-          Request For Maintenance and Safety (REFORMIS) System
+    <main class="custom-main-section">
+      <div class="custom-title">
+        <h1 class="custom-title-text">
+          Request For Maintenance and Safety (REFORMS) System
         </h1>
       </div>
-      <form action="" class="login-form">
-        <div class="login-form-div">
-          <fieldset class="fieldset-username">
-            <label for="username">Username: </label>
-            <input
-              type="text"
-              id="username"
-              placeholder="Enter Username"
-              required
-            />
-          </fieldset>
 
-          <fieldset class="fieldset-password">
-            <label for="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter Password"
-              required
-            />
-          </fieldset>
-          <button id="submit">Login</button>
-          <button id="register">Register</button>
+      <!-- LOGIN FORM -->
+
+      <div
+        class="custom-main-login-carousel"
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 15rem;
+        "
+      >
+        <form action="" class="custom-login-form">
+          <div class="custom-login-form-div">
+            <fieldset class="fieldset-username">
+              <label for="username">Username: </label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter Username"
+                required
+              />
+            </fieldset>
+
+            <fieldset class="fieldset-password">
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                required
+              />
+            </fieldset>
+            <button id="submit">Login</button>
+            <button id="register">Register</button>
+          </div>
+        </form>
+
+        <div
+          style="
+            background-color: #254336;
+
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div
+            id="carouselExampleCaptions"
+            class="carousel slide"
+            style="
+              width: 50%;
+              height: auto;
+              background-color: #254336;
+              opacity: 50%;
+            "
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="../public/Checklist_small.jpg"
+                  class="d-block w-100 mx-auto"
+                  alt="Request For Maintenance"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Submit Maintenance Request</h5>
+                  <p>
+                    Some representative placeholder content for the first slide.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../public/progress_small.jpg"
+                  class="d-block w-100 mx-auto"
+                  alt="Track Job Status"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Track Job Status</h5>
+                  <p>
+                    Some representative placeholder content for the second
+                    slide.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../public/uauc_small.jpg"
+                  class="d-block w-100 mx-auto"
+                  alt="..."
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Unsafe Condition / Unsafe Act Report</h5>
+                  <p>
+                    Some representative placeholder content for the third slide.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
-      </form>
+      </div>
     </main>
 
-    <div class=""></div>
+    <!-- CAROUSEL -->
 
+    <!-- FOOTER -->
     <footer>
       <div class="nav-footer">
-        <a class="link" href="#">Disclaimer</a>
-        <p>|</p>
-        <a class="link" href="#">Security Policy</a>
-        <p>|</p>
-        <a class="link" href="#">Sitemap</a>
+        <a class="footer-link" href="#">Disclaimer</a>
+
+        <a class="footer-link" href="#">Security Policy</a>
+
+        <a class="footer-link" href="#">Sitemap</a>
       </div>
       <div class="details-footer">
         <p>Semenyih, Selangor Darul Ehsan</p>
@@ -75,5 +223,11 @@
         <p>&copy; 2021 Aizad Ramli. All Rights Reserved.</p>
       </div>
     </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

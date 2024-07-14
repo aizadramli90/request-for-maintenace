@@ -43,6 +43,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    background-color: #ffffff;
 }
 ol, ul {
 	list-style: none;
@@ -83,7 +84,7 @@ table {
     align-items: center;
 } */
 
-.logo-container {
+.custom-logo-container {
     margin-right: 50px;
     display: flex;
     flex-direction: row;
@@ -109,7 +110,7 @@ nav {
     justify-content: space-between;
     vertical-align: baseline;
     padding: 15px;
-    background-color: #B7B597;
+    background-color: #254336;
     opacity: 100%;
     z-index: 100;
 
@@ -121,9 +122,9 @@ nav ul {
     align-items: center;
 }
 
-.link {
+.custom-nav-link {
     font-size: 16px;
-    color: #254336;
+    color: #f1f1f1;
     text-decoration: none;
     font-family: "Poppins";
     font-weight: 400;
@@ -138,7 +139,7 @@ nav ul li:not(:last-child) {
 
 
 
-.title {
+.custom-title {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,11 +149,12 @@ nav ul li:not(:last-child) {
     
 }
 
-.title-text {
+.custom-title-text {
     font-size: xx-large;
+    color: #254336;
 }
 
-.login-form {
+.custom-login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -171,7 +173,7 @@ fieldset {
 
 }
 
-.login-form-div {
+.custom-login-form-div {
     display: flex;
     flex-direction: column;
 }
@@ -185,17 +187,15 @@ fieldset {
     
 } */
 
-.main-section {
+.custom-main-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 32px;
+   
 }
 
-.login-form-div {
-    display: flex;
-    flex-direction: column;
-}
+
 
 label {
     color: #000000;
@@ -251,7 +251,6 @@ footer {
     vertical-align: baseline;
     padding: 32px;
     background-color: #B7B597;
-    
     z-index: 100;
 }
 
@@ -264,6 +263,22 @@ footer {
     background-color: #B7B597;
     opacity: 100%;
     z-index: 100;
+}
+
+footer > .nav-footer > a::after {
+    content: " | ";
+    margin: 0 10px;
+    color: #000000;
+}
+
+footer > .nav-footer > a:last-child::after {
+    content: "";
+}
+
+.footer-link {
+    font-size: 16px;
+    color: #254336;
+    text-decoration: none;
 }
 
 .details-footer {

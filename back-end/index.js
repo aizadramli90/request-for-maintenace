@@ -1,28 +1,25 @@
+//import all the required modules
 import express from "express";
+import healthController from "./controller/health.js";
 
 
 
 
 
+//declare the express app and port
 const app = express();
-const PORT = 3000;
+const PORT = 8686;
 
 //parsing
-app.use(express.json);
+app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 //database init
 
 
 //routes
-app.get("/", (req, res) => {
-    res.status(200).json({message: "Hello json"})
-});
-
-app.post("/", (req, res) => {
-    const body = req.body;
-    res.status(200).json(body);
-})
+app.get("/", healthController.get);
+app.post("/", healthController.post);
 
 
 
