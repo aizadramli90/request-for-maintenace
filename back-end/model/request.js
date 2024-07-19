@@ -9,6 +9,8 @@ const query = `
         request_id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(user_id),
         department VARCHAR(50) NOT NULL,
+        maintenance_type VARCHAR(50) NOT NULL,
+        issued_to VARCHAR(50) NOT NULL,
         title VARCHAR(50) NOT NULL,
         description TEXT NOT NULL,
         status VARCHAR(50) DEFAULT 'pending',

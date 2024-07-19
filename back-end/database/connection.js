@@ -20,7 +20,7 @@ export const pool = new Pool({
 });
 
 
-export async function testConnection() {
+export async function databaseInit() {
     try {
         const dbRes = await pool.query("SELECT NOW()");
         const dbName = await pool.query("SELECT current_database()");

@@ -5,13 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch index.js",
+    "dev": "PGHOST='localhost' PGUSER='postgres' PGPASSWORD='Aiz@d114' PGDATABASE='reforms-web-project' node --watch index.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Muhammad Aizad",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "pg": "^8.12.0"
   }
