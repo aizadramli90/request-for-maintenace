@@ -5,14 +5,16 @@ import { pool } from "../../database/connection.js";
 
 //function to list all requests for a specific user
 const listAllRequestForSpecificId = async (req, res) => {
-    
+    console.log(req.userId);
     try {
         const queryAllRequests = `
             SELECT * FROM request WHERE user_id = $1
             `;
-        const user_id = req.params.user_id;
+
+        //can't use params here, to avoid brute force attack    
+        //const user_id = req.params.user_id;
         const dbRes = await pool.query(queryAllRequests, [user_id]);
-        console.log(dbRes.rows);
+        //console.log(dbRes.rows);
         const data = dbRes.rows;
         res.status(200).json({
             message: `${data.length} requests submitted by ${user_id}`,

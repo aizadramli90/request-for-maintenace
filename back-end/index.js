@@ -9,6 +9,7 @@ import deleteUser from "./controller/user.controller/delete.js";
 import createRequest from "./controller/request.controller/create.js";
 import listAllRequestForSpecificId from "./controller/request.controller/read.js";
 import createToken from "./controller/auth.js";
+import isAuth from "./middleware/isAuth.js";
 
 
 
@@ -42,7 +43,7 @@ app.post("/login", createToken)
 
 //route to handle requests
 app.post("/requests", createRequest);
-app.get("/requests/:user_id", listAllRequestForSpecificId);
+app.get("/requests", isAuth, listAllRequestForSpecificId);
 
 
 //route to handle 404

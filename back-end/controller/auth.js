@@ -1,5 +1,6 @@
 import { pool } from "../database/connection.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const createToken = async (req, res) => {
     try {
@@ -29,7 +30,7 @@ const createToken = async (req, res) => {
 
         //check hashedPassword is correct or not
         const isValidPassword = bcrypt.compareSync(password, user.password);
-        console.log(isValidPassword);
+        //console.log(isValidPassword);
 
         //if password is not correct
         if (!isValidPassword) {
@@ -38,9 +39,20 @@ const createToken = async (req, res) => {
             });
         };
 
+        //create token using jwt
+        const data = {
+            email: user.email,
+            user_id: user.user_id,
+
+        };
+
+        const secretKey = 'verySecretKey009';
+        const token = jwt.sign(data, secretKey);
+
 
         res.status(200).json({
             message: "Token created",
+            token,
                 });
 
     } catch (error) {
