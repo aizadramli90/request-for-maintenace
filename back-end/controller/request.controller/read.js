@@ -11,8 +11,9 @@ const listAllRequestForSpecificId = async (req, res) => {
             SELECT * FROM request WHERE user_id = $1
             `;
 
-        //can't use params here, to avoid brute force attack    
-        //const user_id = req.params.user_id;
+        //can't use params here, to avoid brute force attack  
+
+        user_id = req.body.user_id;
         const dbRes = await pool.query(queryAllRequests, [user_id]);
         //console.log(dbRes.rows);
         const data = dbRes.rows;

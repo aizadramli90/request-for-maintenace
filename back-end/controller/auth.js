@@ -15,11 +15,11 @@ const createToken = async (req, res) => {
         }
 
         //check email is exist in database
-        const query = `
+        const readQuery = `
             SELECT * FROM users WHERE email = $1
         `;
 
-        const dbRes = await pool.query(query, [email]);
+        const dbRes = await pool.query(readQuery, [email]);
         const user = dbRes.rows[0];
         console.log(user);
         if (!user) {
@@ -43,12 +43,10 @@ const createToken = async (req, res) => {
         const data = {
             email: user.email,
             user_id: user.user_id,
-
         };
 
         const secretKey = 'verySecretKey009';
         const token = jwt.sign(data, secretKey);
-
 
         res.status(200).json({
             message: "Token created",
