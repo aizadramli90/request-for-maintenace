@@ -1,4 +1,5 @@
 //import all the required modules
+import "dotenv/config.js";
 import express from "express";
 import healthController from "./controller/health.js";
 import { databaseInit } from "./database/connection.js";
@@ -42,7 +43,7 @@ app.post("/register", createUser);
 app.post("/login", createToken)
 
 //route to handle requests
-app.post("/requests", createRequest);
+app.post("/requests", isAuth, createRequest);
 app.get("/requests", isAuth, listAllRequestForSpecificId);
 
 

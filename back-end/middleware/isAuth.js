@@ -2,6 +2,14 @@ import jwt from 'jsonwebtoken';
 
 const isAuth = (req, res, next) => {
     const bearerToken = req.headers.authorization;
+
+    if (!bearerToken) {
+        return res.status(401).json({
+            message: "Unauthorized"
+        })
+    }
+
+
     const token = bearerToken.split(" ")[1];
 
     console.log(token);
@@ -21,9 +29,9 @@ const isAuth = (req, res, next) => {
             });
         };
     
-    console.log(decoded);
-    /* req.userId = decoded.user_id;
-    req.userEmail = decoded.email; */
+    /* console.log(`decoded: ${JSON.stringify(decoded, null, 2)}`); */
+    req.userId = decoded.user_id;
+    req.userEmail = decoded.email;
     next();
 
     });

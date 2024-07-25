@@ -1,4 +1,5 @@
 import pkg from "pg";
+import "dotenv/config";
 import createUsersTable from "../model/user.js";
 import createRequestTable from "../model/request.js";
 

@@ -8,7 +8,7 @@ const createRequest = async (req, res) => {
         `;
 
         //payload request
-        const user_id = req.body.user_id;
+        const user_id = req.userId;
         const department = req.body.department;
         const maintenance_type = req.body.maintenance_type;
         const issued_to = req.body.issued_to;
