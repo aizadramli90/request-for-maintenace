@@ -11,6 +11,8 @@ import createRequest from "./controller/request.controller/create.js";
 import listAllRequestForSpecificId from "./controller/request.controller/read.js";
 import createToken from "./controller/auth.js";
 import isAuth from "./middleware/isAuth.js";
+import { uploadImage } from "./controller/upload.js";
+import upload from "./middleware/multerUpload.js";
 
 
 
@@ -46,6 +48,8 @@ app.post("/login", createToken)
 app.post("/requests", isAuth, createRequest);
 app.get("/requests", isAuth, listAllRequestForSpecificId);
 
+//upload image
+app.post("/upload", upload.single('image'), uploadImage);
 
 //route to handle 404
 app.use((req, res) => {
