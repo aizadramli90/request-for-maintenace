@@ -13,7 +13,7 @@ import createToken from "./controller/auth.js";
 import isAuth from "./middleware/isAuth.js";
 import { uploadImage } from "./controller/upload.js";
 import upload from "./middleware/multerUpload.js";
-
+import path from "path";
 
 
 
@@ -51,9 +51,11 @@ app.get("/requests", isAuth, listAllRequestForSpecificId);
 //upload image
 app.post("/upload", isAuth, upload.single('image'), uploadImage);
 
-//route to handle 404
+//route to handle 404 and show page 404.html
 app.use((req, res) => {
-    res.status(404).json({message: "Route not found"})
+    /* res.status(404).json({message: "Route not found"}); */
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+    
 })
 
 
