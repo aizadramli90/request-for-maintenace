@@ -2,6 +2,7 @@ import pkg from "pg";
 import "dotenv/config";
 import createUsersTable from "../model/user.js";
 import createRequestTable from "../model/request.js";
+import createFileTable from "../model/file.js";
 
 
 
@@ -31,6 +32,7 @@ export async function databaseInit() {
         //create users table
         await createUsersTable();
         await createRequestTable();
+        await createFileTable();
 
     } catch (error) {
         console.error("Database connection failed");

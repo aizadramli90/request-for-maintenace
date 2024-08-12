@@ -49,7 +49,7 @@ app.post("/requests", isAuth, createRequest);
 app.get("/requests", isAuth, listAllRequestForSpecificId);
 
 //upload image
-app.post("/upload", upload.single('image'), uploadImage);
+app.post("/upload", isAuth, upload.single('image'), uploadImage);
 
 //route to handle 404
 app.use((req, res) => {
