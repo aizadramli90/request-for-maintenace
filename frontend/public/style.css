@@ -264,7 +264,7 @@ input, select {
 
 
 
-#register {
+/* #register {
     margin-top: 10px;
     background-color: beige;
     color: #000000;
@@ -272,6 +272,24 @@ input, select {
     outline: none;
     border: none;
     height: 30px;
+} */
+
+.custom-register-link-in-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    text-decoration: none;
+    color: #333333;
+}
+
+.custom-register-link-in-login:hover {
+    color: #254336;
+    background-color: bisque;
+    border-radius: 10px;
+    width: 193px;
+    height: 28px;
 }
 
 
