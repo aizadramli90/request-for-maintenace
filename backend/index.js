@@ -14,6 +14,14 @@ import isAuth from "./middleware/isAuth.js";
 import { uploadImage } from "./controller/upload.js";
 import upload from "./middleware/multerUpload.js";
 import path from "path";
+import { fileURLToPath } from 'url';
+
+
+
+
+// Define __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 
@@ -26,6 +34,8 @@ const PORT = 8686;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+//serve static files from the ../frontend/public folder
+app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 
 //database connection and initialization
@@ -54,7 +64,7 @@ app.post("/upload", isAuth, upload.single('image'), uploadImage);
 //route to handle 404 and show page 404.html
 app.use((req, res) => {
     /* res.status(404).json({message: "Route not found"}); */
-    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+    res.status(404).sendFile(path.join(__dirname, '../frontend/public', '404.html'));
     
 })
 
