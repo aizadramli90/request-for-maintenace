@@ -221,15 +221,21 @@ input, select, textarea {
 
 
 
-button {
+
+
+/* button {
     border-radius: 10px;
     outline: none;
     border: none;
     height: 30px;
-}
+} */
 
 #submit {
     margin-top: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    height: 30px;
 }
 
 #submit:hover {

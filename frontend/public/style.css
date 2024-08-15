@@ -219,7 +219,7 @@ fieldset {
     object-fit: cover; /* Maintain aspect ratio and cover the area */
   }
 
-
+/* --------------form styling --------------*/
 
 label {
     color: #000000;
@@ -262,6 +262,19 @@ input, select {
     color: #DAD3BE;;
 }
 
+#register {
+    margin-top: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    height: 30px;
+}
+
+#register:hover {
+    background-color: #254336;
+    color: #DAD3BE;
+}
+
 
 
 /* #register {
@@ -295,6 +308,13 @@ input, select {
 
 h1 {
     display: block;
+}
+
+/* -------------------table styling --------------*/
+table {
+    margin-top: 50px;
+    border-collapse: collapse;
+    border-spacing: 100px 0;
 }
 
 footer {
