@@ -1,17 +1,17 @@
 import React from 'react';
-
+import {
+  RouterProvider
+} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import Dashboard from './components/Dashboard';
+import { router } from './routes/Root';
+
+
+
+
 
 function App() {
-  
-
-  return (
-    <>
-      <Dashboard />
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
 export default App
