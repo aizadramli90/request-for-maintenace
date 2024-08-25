@@ -1,8 +1,9 @@
-import Dashboard from '../components/Dashboard';
+import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
+import RequestForm from '../pages/RequestForm';
 
 import {
     createBrowserRouter
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
     {
         path: "/contact",
         element: <Contact />,
+    },
+    {
+      path: "/request",
+      element: <RequestForm />,
     }
     
   ]);

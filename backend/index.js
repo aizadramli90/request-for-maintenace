@@ -15,6 +15,7 @@ import { uploadImage } from "./controller/upload.js";
 import upload from "./middleware/multerUpload.js";
 import path from "path";
 import { fileURLToPath } from 'url';
+import cors from "cors";
 
 
 
@@ -29,6 +30,15 @@ const __dirname = path.dirname(__filename);
 //declare the express app and port
 const app = express();
 const PORT = 8686;
+
+
+// cors
+app.use(cors(
+    {
+        origin: "http://localhost:5173",
+        credentials: true
+    }
+));
 
 //parsing
 app.use(express.json());

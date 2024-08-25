@@ -18,7 +18,7 @@ async function createUser(req, res) {
         const username = req.body.username;
         const email = req.body.email;
         const password = req.body.password;
-        const is_admin = req.body.is_admin;
+        const is_admin = req.body.is_admin || false;
 
         //validation
         if (!username || !email || !password) {

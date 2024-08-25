@@ -1,93 +1,16 @@
-import React from 'react'
+import React from 'react';
+import NavigationBar from '../components/NavigationBar';
 
 
 const Contact = props => {
   return (
     <div>
       
-      <meta charSet="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossOrigin="anonymous"
-  />
-  <link rel="stylesheet" href="style.css" />
+      
+  
   <title>Request For Maintenance and Safety System: Login Page</title>
-  {/* <nav>
-<div class="custom-logo-container">
-  <img src="./assets/eco-svgrepo-com.svg" alt="" srcset="" class="logo" />
-  <a href="#">EcoGuardian</a>
-</div>
-<ul>
-  <li><a class="custom-nav-link" href="#">Home</a></li>
-  <li><a class="custom-nav-link" href="#">Job Status</a></li>
-  <li><a class="custom-nav-link" href="#">Contact Us</a></li>
-  <li><a class="custom-nav-link" href="#">Request</a></li>
-</ul>
-    </nav> */}
-  <nav className="navbar navbar-expand-lg" data-bs-theme="dark">
-    <div className="container-fluid">
-      <div className="custom-logo-container">
-        <img
-          src="./assets/eco-svgrepo-com.svg"
-          alt=""
-          srcSet=""
-          className="logo"
-        />
-      </div>
-      <a className="navbar-brand" href="/">
-        EcoGuardian
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarColor02"
-        aria-controls="navbarColor02"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="navbarColor02">
-        <ul className="navbar-nav me-auto">
-          <li className="nav-item">
-            <a className="nav-link active" href="/">
-              Home
-              <span className="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/login">
-              Login
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/register">
-              Register
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/contact">
-              Contact Us
-            </a>
-          </li>
-        </ul>
-        <form className="d-flex">
-          <input
-            className="form-control me-sm-2"
-            type="search"
-            placeholder="Search"
-          />
-          <button className="btn btn-secondary my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
-    </div>
-  </nav>
+  
+  <NavigationBar />
   <main className="custom-main-section" style={{ height: 500 }}>
     <div className="custom-title">
       <h1 className="custom-title-text" style={{margin: '32px auto'}}>Contact</h1>
