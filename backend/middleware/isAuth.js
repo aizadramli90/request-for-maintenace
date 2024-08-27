@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken';
 
 const isAuth = (req, res, next) => {
     const bearerToken = req.headers.authorization;
-
     if (!bearerToken) {
         return res.status(401).json({
             message: "Unauthorized"
@@ -13,6 +12,7 @@ const isAuth = (req, res, next) => {
     const token = bearerToken.split(" ")[1];
 
     console.log(token);
+    
 
     if (!token) {
         return res.status(401).json({
@@ -32,6 +32,7 @@ const isAuth = (req, res, next) => {
     /* console.log(`decoded: ${JSON.stringify(decoded, null, 2)}`); */
     req.userId = decoded.user_id;
     req.userEmail = decoded.email;
+    req.is_admin = decoded.is_admin;
     next();
 
     });

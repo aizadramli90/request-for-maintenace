@@ -32,7 +32,7 @@ const Login = () => {
         
         setToken(data.token);
         localStorage.setItem('token', data.token); // Store token in local storage
-        navigate('/dashboard');
+        navigate('/userdashboard');
       }
       setMessage(data.message);
     })

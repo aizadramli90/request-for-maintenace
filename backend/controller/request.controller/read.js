@@ -5,8 +5,8 @@ import { pool } from "../../database/connection.js";
 
 //function to list all requests for a specific user
 const listAllRequestForSpecificId = async (req, res) => {
-    console.log(req.userId);
-    console.log(req.userEmail);
+    // console.log(req.userId);
+    // console.log(req.userEmail);
     const user_id = req.userId;
 
     try {

@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import NavigationBar from '../components/NavigationBar';
+import { useNavigate } from 'react-router-dom';
+
 
 const Register = props => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,6 +28,7 @@ const Register = props => {
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);
+      navigate('/login');
     })
     .catch((error) => {
       console.error('Error:', error);

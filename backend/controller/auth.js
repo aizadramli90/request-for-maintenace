@@ -43,6 +43,7 @@ const createToken = async (req, res) => {
         const data = {
             email: user.email,
             user_id: user.user_id,
+            is_admin: user.is_admin,
         };
 
         const secretKey = 'verySecretKey009';

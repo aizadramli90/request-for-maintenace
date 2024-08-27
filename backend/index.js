@@ -32,13 +32,7 @@ const app = express();
 const PORT = 8686;
 
 
-// cors
-app.use(cors(
-    {
-        origin: "http://localhost:5173",
-        credentials: true
-    }
-));
+
 
 //parsing
 app.use(express.json());
@@ -51,12 +45,20 @@ app.use(express.static(path.join(__dirname, '../frontend/public')));
 //database connection and initialization
 databaseInit();
 
+// cors
+app.use(cors(
+    {
+        origin: "http://localhost:5173",
+        credentials: true
+    }
+));
+
 
 
 //routes
 app.get("/", healthController.get);
 app.post("/", healthController.post);
-app.get("/users", readAllUsers);
+app.get("/admin/users", isAuth, readAllUsers);
 app.get("/users/:id", readUserById);
 app.put("/users/:id", updateUser);
 app.delete("/users/:id", deleteUser)

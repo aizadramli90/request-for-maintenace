@@ -54,7 +54,7 @@ const NavigationBar = () => {
               {isLoggedIn && (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link" href="/dashboard">
+                    <a className="nav-link" href="/userdashboard">
                       My Dashboard
                     </a>
                   </li>
@@ -86,7 +86,7 @@ const NavigationBar = () => {
               )}
               {isLoggedIn && (
                 <li className="nav-item">
-                  <button className="nav-link btn btn-link" onClick={handleLogout}>
+                  <button className="nav-link btn btn-link" style={{border: "1px solid #333333"}} onClick={handleLogout}>
                     Log Out
                   </button>
                 </li>
@@ -96,6 +96,7 @@ const NavigationBar = () => {
               <input
                 className="form-control me-sm-2"
                 type="search"
+                name='search'
                 placeholder="Search"
               />
               <button className="btn btn-secondary my-2 my-sm-0" type="submit">

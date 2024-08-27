@@ -5,6 +5,10 @@ const queryAllUsers = `SELECT * FROM users`;
 const queryUserById = `SELECT * FROM users WHERE user_id = $1`;
 
 export async function readAllUsers(req, res) {
+    if (!req.is_admin) {
+        return res.status(403).json({ message: 'Forbidden' });
+    }
+    
     try {
         const dbRes = await pool.query(queryAllUsers);
         const data = dbRes.rows;
