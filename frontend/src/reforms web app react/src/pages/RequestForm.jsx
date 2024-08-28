@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 
 
 const RequestForm = () => {
-  const [department, setDepartment] = useState('');
-  const [maintenanceType, setMaintenanceType] = useState('');
-  const [issuedTo, setIssuedTo] = useState('');
+  const [department, setDepartment] = useState('adminAndHR');
+  const [maintenanceType, setMaintenanceType] = useState('breakdown');
+  const [issuedTo, setIssuedTo] = useState('mechanical');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   
@@ -16,7 +16,7 @@ const RequestForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(department, maintenanceType, issuedTo, title, description);
+    console.log("Department: " + department + ", MaintenanceType: " + maintenanceType + ", issued to: " + issuedTo + ", title: " + title + ", description: " + description);
 
     fetch('http://localhost:8686/requests', {
       method: 'POST',
@@ -32,14 +32,16 @@ const RequestForm = () => {
         description: description,
       })
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-      navigate('/userdashboard');
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        navigate('/userdashboard');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+  
   }
   return (
     <div>
@@ -68,12 +70,13 @@ const RequestForm = () => {
                   <label htmlFor="department">Department </label>
                   <select
                   name='department'
-                  id="department" required="" value={department} onChange={(event)=>{
+                  id="department" required value={department} onChange={(event)=>{
+                    console.log("Department masuk tak",   event.target.value);
           setDepartment(event.target.value);
         }}>
-                    <option value="admin_HR">Admin &amp; Human Resource</option>
+                    <option value="adminAndHR">Admin &amp; Human Resource</option>
                     <option value="production">Production</option>
-                    <option value="lab_and_operation">Lab &amp; Operation</option>
+                    <option value="labAndOperation">Lab &amp; Operation</option>
                     <option value="logistic">Logistic</option>
                     <option value="dtp">DTP</option>
                   </select>
@@ -84,8 +87,9 @@ const RequestForm = () => {
                   <select 
                   name='maintenance_type'
                    id="maintenance_type"  required value={maintenanceType} onChange={
-                    (event) => {
-                      setMaintenanceType(event.target.value);
+                    (e) => {
+                      console.log("Maintenance type masuk tak",   e.target.value);
+                      setMaintenanceType(e.target.value);
                     }
                   }>
                     <option value="breakdown">Break Down</option>
@@ -99,7 +103,7 @@ const RequestForm = () => {
                   <select 
                   name='issued_to'
                   id="issued_to" 
-                  required="" 
+                  required 
                   value={
                     issuedTo
                   }
@@ -123,7 +127,7 @@ const RequestForm = () => {
                     rows={10}
                     cols={30}
                     placeholder="Describe your problem" 
-                    required=""
+                    required
                     value={title}
                     onChange={
                       (event) => {

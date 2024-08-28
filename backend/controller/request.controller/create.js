@@ -20,7 +20,7 @@ const createRequest = async (req, res) => {
         //validate empty fields
         if (!department || !maintenance_type || !issued_to || !title || !description) {
             return res.status(400).json({
-                message: "Please fill all the required fields"
+                message: "Please fill all the required fields!"
             })
         };
 
