@@ -46,7 +46,7 @@ const createToken = async (req, res) => {
             is_admin: user.is_admin,
         };
 
-        const secretKey = 'verySecretKey009';
+        const secretKey = process.env.JWT_SECRET;
         const token = jwt.sign(data, secretKey);
 
         res.status(200).json({

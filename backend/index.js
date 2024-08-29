@@ -29,7 +29,7 @@ const __dirname = path.dirname(__filename);
 
 //declare the express app and port
 const app = express();
-const PORT = 8686;
+const PORT = process.env.PORT || 8686;
 
 
 
@@ -48,7 +48,7 @@ databaseInit();
 // cors
 app.use(cors(
     {
-        origin: "http://localhost:5173",
+        origin: process.env.FRONTEND_URL,
         credentials: true
     }
 ));

@@ -21,7 +21,7 @@ const isAuth = (req, res, next) => {
     };
 
     //check token validity
-    const secretKey = 'verySecretKey009';
+    const secretKey = process.env.JWT_SECRET;
     jwt.verify(token, secretKey, (err, decoded) => {
         if (err) {
             return res.status(401).json({
