@@ -1,22 +1,22 @@
 //import all the required modules
-import "dotenv/config.js";
+import 'dotenv/config'
 import express from "express";
 import healthController from "./controller/health.js";
 import { databaseInit } from "./database/connection.js";
 import createUser from "./controller/user.controller/create.js";
 import { readAllUsers, readUserById } from "./controller/user.controller/read.js";
-import updateUser from "./controller/user.controller/update.js";
+// import updateUser from "./controller/user.controller/update.js";
 import deleteUser from "./controller/user.controller/delete.js";
 import createRequest from "./controller/request.controller/create.js";
+import deleteRequest from "./controller/request.controller/delete.js";
 import listAllRequestForSpecificId from "./controller/request.controller/read.js";
 import createToken from "./controller/auth.js";
 import isAuth from "./middleware/isAuth.js";
-import { uploadImage } from "./controller/upload.js";
-import upload from "./middleware/multerUpload.js";
+/* import { uploadImage } from "./controller/upload.js";
+import upload from "./middleware/multerUpload.js"; */
 import path from "path";
 import { fileURLToPath } from 'url';
 import cors from "cors";
-
 
 
 
@@ -59,8 +59,6 @@ app.use(cors(
 app.get("/", healthController.get);
 app.post("/", healthController.post);
 app.get("/admin/users", isAuth, readAllUsers);
-app.get("/users/:id", readUserById);
-app.put("/users/:id", updateUser);
 app.delete("/users/:id", deleteUser)
 
 app.post("/register", createUser);
@@ -70,9 +68,12 @@ app.post("/login", createToken)
 app.post("/requests", isAuth, createRequest);
 app.get("/requests", isAuth, listAllRequestForSpecificId);
 
-//upload image
-app.post("/upload", isAuth, upload.single('image'), uploadImage);
+//delete request
+app.delete("/request/:id", isAuth, deleteRequest);
 
+//upload image - TO BE ADDED SOON
+/* app.post("/upload", isAuth, upload.single('image'), uploadImage);
+ */
 //route to handle 404 and show page 404.html
 app.use((req, res) => {
     /* res.status(404).json({message: "Route not found"}); */
