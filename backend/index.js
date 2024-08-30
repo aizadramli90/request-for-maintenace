@@ -29,7 +29,7 @@ const __dirname = path.dirname(__filename);
 
 //declare the express app and port
 const app = express();
-const PORT = process.env.PORT || 8686;
+const PORT = process.env.PORT;
 
 
 

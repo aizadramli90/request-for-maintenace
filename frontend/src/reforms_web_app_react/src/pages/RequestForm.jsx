@@ -10,15 +10,14 @@ const RequestForm = () => {
   const [issuedTo, setIssuedTo] = useState('mechanical');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  
-  
+  const BASE_URL = import.meta.env.VITE_BASE_URL;  
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Department: " + department + ", MaintenanceType: " + maintenanceType + ", issued to: " + issuedTo + ", title: " + title + ", description: " + description);
 
-    fetch('http://localhost:8686/requests', {
+    fetch(`${BASE_URL}/requests`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

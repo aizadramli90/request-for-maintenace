@@ -1,4 +1,3 @@
-import AdminDashboard from '../pages/AdminDashboard';
 import UserDashboard from '../pages/UserDashboard';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
@@ -16,10 +15,6 @@ export const router = createBrowserRouter([
     {
       path: "/",
       element: <Home />,
-    },
-    {
-      path: "/admindashboard",
-      element: <AdminDashboard />,
     },
     {
       path: "/userdashboard",

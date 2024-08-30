@@ -9,13 +9,15 @@ const Login = () => {
   const [message, setMessage] = useState('');
   const [token, setToken] = useState('');
   const navigate = useNavigate();
+  const BASE_URL = import.meta.env.VITE_BASE_URL; 
+
 
   const handleLogin = (event) => {
     event.preventDefault();
     console.log(email, password);
 
     /* TODO: Submit to the api */
-    fetch('http://localhost:8686/login', {
+    fetch(`${BASE_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

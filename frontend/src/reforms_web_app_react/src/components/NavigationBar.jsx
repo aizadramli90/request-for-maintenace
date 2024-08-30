@@ -29,7 +29,7 @@ const NavigationBar = () => {
               className="logo"
             />
           </div>
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             EcoGuardian
           </a>
           <button

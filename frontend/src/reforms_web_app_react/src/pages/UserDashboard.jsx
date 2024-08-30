@@ -4,11 +4,12 @@ import NavigationBar from '../components/NavigationBar';
 const UserDashboard = () => {
   const [data, setData] = useState([]);
   const token = localStorage.getItem('token');
+  const BASE_URL = import.meta.env.VITE_BASE_URL; 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8686/requests', {
+        const response = await fetch(`${BASE_URL}/requests`, {
   headers: {
     'Authorization': `Bearer ${token}`
   }

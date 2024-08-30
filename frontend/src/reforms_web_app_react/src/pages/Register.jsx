@@ -8,13 +8,14 @@ const Register = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const BASE_URL = import.meta.env.VITE_BASE_URL; 
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(username, email, password);
 
     /* TODO: Submit to the API */
-    fetch('http://localhost:8686/register', {
+    fetch(`${BASE_URL}/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
