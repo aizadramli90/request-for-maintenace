@@ -5,6 +5,8 @@ import Register from '../pages/Register';
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
 import RequestForm from '../pages/RequestForm';
+import NotFound from '../pages/NotFound';
+
 
 import {
     createBrowserRouter
@@ -38,6 +40,10 @@ export const router = createBrowserRouter([
     {
       path: "/request",
       element: <RequestForm />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     }
     
   ]);
