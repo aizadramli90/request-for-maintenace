@@ -39,7 +39,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 //serve static files from the ../frontend/public folder
-app.use(express.static(path.join(__dirname, '../frontend/src/reforms web app react/public')));
+//app.use(express.static(path.join(__dirname, '../frontend/src/reforms_web_app_react/public')));
+app.use(express.static(path.join(__dirname, '../frontend/src/reforms_web_app_react/dist')));
+
 
 
 //database connection and initialization
