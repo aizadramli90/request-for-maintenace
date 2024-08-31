@@ -19,7 +19,7 @@ const UserDashboard = () => {
         }
         const json = await response.json();
         setData(json.data);
-        console.log(json.data);
+        //console.log(json.data);
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
       }

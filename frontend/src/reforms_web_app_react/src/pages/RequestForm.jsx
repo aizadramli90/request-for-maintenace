@@ -15,7 +15,7 @@ const RequestForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Department: " + department + ", MaintenanceType: " + maintenanceType + ", issued to: " + issuedTo + ", title: " + title + ", description: " + description);
+    //console.log("Department: " + department + ", MaintenanceType: " + maintenanceType + ", issued to: " + issuedTo + ", title: " + title + ", description: " + description);
 
     fetch(`${BASE_URL}/requests`, {
       method: 'POST',
@@ -33,7 +33,7 @@ const RequestForm = () => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log('Success:', data);
+        //console.log('Success:', data);
         navigate('/userdashboard');
       })
       .catch((error) => {

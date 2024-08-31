@@ -14,7 +14,7 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log(email, password);
+    //console.log(email, password);
 
     /* TODO: Submit to the api */
     fetch(`${BASE_URL}/login`, {
@@ -30,7 +30,7 @@ const Login = () => {
     .then(response => response.json())
     .then(data => {
       if (data.token) {
-        console.log(data.token);
+        //console.log(data.token);
         
         setToken(data.token);
         localStorage.setItem('token', data.token); // Store token in local storage
