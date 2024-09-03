@@ -32,6 +32,16 @@ const app = express();
 const PORT = process.env.PORT;
 
 
+//redirect to new website
+
+app.all('*', (req, res) => {
+  res.redirect(301, 'https://reforms-pern-stack.onrender.com/');
+});
+
+app.listen(80, () => {
+  console.log('Redirect server listening on port 80');
+});
+
 
 
 //parsing
